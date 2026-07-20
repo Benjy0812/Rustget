@@ -1,31 +1,36 @@
+<div align="center">
+
 # 🦀 Rustget
 
-**Rustget** is an experimental package manager written in Rust, inspired by Microsoft's Winget.
+**An experimental package manager written in Rust — inspired by Winget.**
 
-The project serves as both a learning exercise and an attempt to build a lightweight, extensible package manager with support for custom JSON package manifests. While Rustget starts as a learning project, the long-term goal is to create a useful package manager that anyone can use.
+![status](https://img.shields.io/badge/status-early%20development-orange)
+![license](https://img.shields.io/badge/license-MIT-blue)
+![made with](https://img.shields.io/badge/made%20with-Rust-orange?logo=rust)
+
+</div>
+
+---
+
+Rustget is both a learning exercise and an attempt to build a lightweight, extensible package manager with support for custom JSON package manifests. It starts as a learning project — but the long-term goal is a genuinely useful package manager that anyone can use.
 
 ---
 
 ## ✨ Planned Features
 
-- 📦 Install packages
-- 🗑️ Remove packages
-- 🔍 Search repositories
-- 📋 List installed packages
-- 🔄 Update installed packages
-- 📄 JSON-based package manifests
-- 🌐 Custom package repositories
-- 🔐 SHA-256 package verification
-- ⚡ Fast command-line interface
-- 🧩 Extensible repository format
+| | |
+|---|---|
+| 📦 Install packages | 🗑️ Remove packages |
+| 🔍 Search repositories | 📋 List installed packages |
+| 🔄 Update installed packages | 📄 JSON-based package manifests |
+| 🌐 Custom package repositories | 🔐 SHA-256 package verification |
+| ⚡ Fast command-line interface | 🧩 Extensible repository format |
 
 ---
 
 ## 📂 Package Manifests
 
 Rustget uses JSON manifests to describe how packages should be installed.
-
-Example:
 
 ```json
 {
@@ -36,7 +41,7 @@ Example:
 }
 ```
 
-The repository will include official package manifests, but users can also create and host their own repositories.
+The repository will include official package manifests, but anyone can create and host their own.
 
 ---
 
@@ -44,39 +49,27 @@ The repository will include official package manifests, but users can also creat
 
 Rustget is being built to gain practical experience with:
 
-- Rust
-- Systems programming
-- Command-line application development
-- Networking
-- File systems
-- Package management
-- Software architecture
-- Secure software development
+`Rust` · `Systems programming` · `CLI development` · `Networking` · `File systems` · `Package management` · `Software architecture` · `Secure software development`
 
-Rather than learning every Rust concept upfront, the project is developed incrementally—learning new concepts as they're needed.
+Rather than learning every Rust concept upfront, the project is developed incrementally — new concepts are picked up as they're needed.
 
 ---
 
 ## 🗺️ Roadmap
 
-See **ROADMAP.md** for the full development roadmap and planned milestones.
+See **[ROADMAP.md](./ROADMAP.md)** for the full development roadmap and planned milestones.
+
+---
+
+## 📝 Notes
+
+> **[CONTRIBUTING.md](./CONTRIBUTING.md)** is a personal reference doc for keeping package manifests consistent (schema, description style, verification policy) — not a public contribution guide. This project isn't accepting outside contributions yet.
 
 ---
 
 ## 💡 Ideas & Feedback
 
-Have an idea? Open an issue!
-
-Whether it's:
-
-- A feature request
-- A bug report
-- A package request
-- A design suggestion
-- A question
-- Or just a random "what if..."
-
-Feel free to create an issue.
+Have an idea? Open an issue — a feature request, bug report, package request, design suggestion, question, or just a random *"what if..."*
 
 No idea is too small, too weird, or too ambitious. Sometimes the simplest or strangest ideas become the best features.
 
@@ -84,12 +77,10 @@ No idea is too small, too weird, or too ambitious. Sometimes the simplest or str
 
 ## 🚧 Project Status
 
-**Current Stage:** Early Development
-
-Rustget is in the beginning stages of development. Features will be added incrementally as the project grows.
+**Current stage:** Early Development — features are being added incrementally as the project grows.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.
+Licensed under the **MIT License**.
