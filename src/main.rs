@@ -1,3 +1,5 @@
+mod hash;
+
 use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
