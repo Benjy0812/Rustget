@@ -6,7 +6,6 @@ use clap::Parser;
 use cli::{Cli, Commands};
 
 fn main() {
-    println!("Rust Package Manager");
     let cli = Cli::parse();
 
     match cli.command {

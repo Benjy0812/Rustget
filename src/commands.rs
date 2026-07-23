@@ -22,7 +22,7 @@ pub fn info() {
 }
 
 pub fn sha256(path: PathBuf) {
-    println!("File Path {}", path.display());
+    println!("\nFile Path {}\n", path.display());
     let sha256 = sha256_from_file(&path).unwrap();
-    println!("Sha256:{sha256}");
+    println!("Sha256:{sha256}\n");
 }
