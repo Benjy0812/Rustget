@@ -12,7 +12,7 @@ fn main() {
         Commands::Install { name } => commands::install(name),
         Commands::Remove { name } => commands::uninstall(name),
         Commands::Search { term } => commands::search(term),
-        Commands::FilePath { path } => commands::sha256(path),
+        Commands::Sha256 { path } => commands::sha256(path),
         Commands::List => commands::list(),
         Commands::Info => commands::info(),
     }

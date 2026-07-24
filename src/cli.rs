@@ -15,7 +15,7 @@ pub enum Commands {
     Install { name: String },
     Remove { name: String },
     Search { term: String },
-    FilePath { path: PathBuf },
+    Sha256 { path: PathBuf },
     List,
     Info,
 }
