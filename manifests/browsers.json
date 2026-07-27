@@ -1,0 +1,46 @@
+{
+  "category": "browsers",
+  "index": ["zen", "helium", "brave", "librewolf", "vivaldi"],
+  "packages": [
+    {
+      "name": "zen",
+      "version": "152.0.6",
+      "description": "Firefox-based browser with workspaces, split views, and vertical tabs",
+      "homepage": "https://zen-browser.app",
+      "downloadUrl": "https://github.com/zen-browser/desktop/releases/download/1.21.8b/zen.installer.exe",
+      "sha256": "94c183802d1291c20f3d69f33425fac559b2572dfd191d32bfa704aba536776d"
+    },
+    {
+      "name":"helium",
+      "version":"0.14.7.1",
+      "description":"Chromium-based browser without telemetry or mandatory account integration",
+      "homepage":"https://helium.computer",
+      "downloadUrl":"https://github.com/imputnet/helium-windows/releases/download/0.14.7.1/helium_0.14.7.1_x64-installer.exe",
+      "sha256": "8c6fed88c4e30106939b113ea6933b36ab05f38eaadd31df5bce546fd0f01bb0"
+    },
+    {
+      "name": "brave",
+      "version": "1.92.142",
+      "description": "Chromium-based browser with built-in ad blocking, tracker blocking, and optional Tor windows",
+      "homepage": "https://brave.com",
+      "downloadUrl": "https://github.com/brave/brave-browser/releases/download/v1.92.142/BraveBrowserSetup.exe",
+      "sha256": "7836aeced506fcc92afe5ac2c3563cbf2dc8a5901cf13d6a9956be21cf9513f0"
+    },
+    {
+      "name": "librewolf",
+      "version": "152.0.6-1",
+      "description": "Firefox-based browser with telemetry removal, privacy settings, and fingerprinting protection",
+      "homepage": "https://librewolf.net",
+      "downloadUrl": "https://dl.librewolf.net/librewolf/152.0.6-1/librewolf-152.0.6-1-windows-x86_64-setup.exe",
+      "sha256": "92bcbb6adfad4f0120eac26e07b773e599b79541e6378a9d5649af0d7867f65c"
+    },
+    {
+      "name": "vivaldi",
+      "version": "8.1",
+      "description": "Chromium-based browser with tab stacking, workspaces, and built-in mail and calendar tools",
+      "homepage": "https://vivaldi.com",
+      "downloadUrl": "https://downloads.vivaldi.com/stable/Vivaldi.8.1.4087.55.x64.exe",
+      "sha256": "feaf8b1674206d172b7d1d11116d599152fca8b501cac522185e20c820fd41cc"
+    }
+  ]
+}
