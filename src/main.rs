@@ -1,3 +1,4 @@
+mod database;
 mod hash;
 
 use clap::{Parser, Subcommand};
