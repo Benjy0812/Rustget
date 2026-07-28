@@ -12,6 +12,7 @@ pub struct Package {
     pub name: String,
     pub version: String,
     pub description: String,
+    pub homepage: String,
     pub download_url: String,
     pub sha256: String,
 }
@@ -21,5 +22,5 @@ pub fn load_database(path: &str) -> Result<Database, Box<dyn std::error::Error>>
 
     let database: Database = serde_json::from_str(&json)?;
 
-    Ok(Database)
+    Ok(database)
 }
