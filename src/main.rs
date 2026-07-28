@@ -2,7 +2,9 @@ mod database;
 mod hash;
 
 use clap::{Parser, Subcommand};
+use database::{Package, load_database};
 use hash::sha256_from_file;
+use std::io::ErrorKind;
 use std::path::PathBuf;
 
 fn main() {
@@ -13,7 +15,7 @@ fn main() {
         Commands::Search { term } => search(term),
         Commands::Sha256 { path } => sha256(path),
         Commands::List => list(),
-        Commands::Info => info(),
+        Commands::Info { name } => info(name),
     }
 }
 
@@ -30,32 +32,38 @@ pub struct Cli {
 /// Supported subcommands.
 #[derive(Subcommand)]
 pub enum Commands {
+    /// Install an application by name
     Install { name: String },
+    /// Uninstall an application by name
     Remove { name: String },
+    /// Search for applications matching the given term
     Search { term: String },
+    /// Compute and verify the SHA-256 hash of a file
     Sha256 { path: PathBuf },
+    /// List all installed applications
     List,
-    Info,
+    /// Display information about an installed application
+    Info { name: String },
 }
 
 pub fn install(name: String) {
-    println!("Installing {name}");
+    println!("Installing {name}...");
 }
 
 pub fn uninstall(name: String) {
-    println!("Uninstalling {name}");
+    println!("Uninstalling {name}...");
 }
 
 pub fn list() {
-    println!("Listing Isntalled");
+    println!("Listing Installed apps");
 }
 
 pub fn search(term: String) {
-    println!("Search {term}");
+    println!("Searching for {term}");
 }
 
-pub fn info() {
-    println!("Info");
+pub fn info(name: String) {
+    println!("Info for {name}");
 }
 
 /// Prints the SHA-256 hash of the file at `path`.
