@@ -1,9 +1,11 @@
 mod database;
 mod hash;
+mod installed;
 
 use clap::{Parser, Subcommand};
 use database::{Package, load_database};
 use hash::sha256_from_file;
+use installed::{load_installed, save_installed};
 use std::io::ErrorKind;
 use std::path::PathBuf;
 
@@ -37,7 +39,7 @@ pub enum Commands {
     /// Uninstall an application by name
     Remove { name: String },
     /// Search for applications matching the given term
-    Search { term: String },
+    Search { term: Option<String> },
     /// Compute and verify the SHA-256 hash of a file
     Sha256 { path: PathBuf },
     /// List all installed applications
