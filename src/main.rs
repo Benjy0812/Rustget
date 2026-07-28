@@ -6,8 +6,11 @@ use clap::{Parser, Subcommand};
 use database::{Package, load_database};
 use hash::sha256_from_file;
 use installed::{load_installed, save_installed};
+use serde_json::error::Category::Data;
 use std::io::ErrorKind;
 use std::path::PathBuf;
+
+use crate::database::Database;
 
 fn main() {
     let cli = Cli::parse();
@@ -60,8 +63,51 @@ pub fn list() {
     println!("Listing Installed apps");
 }
 
-pub fn search(term: String) {
-    println!("Searching for {term}");
+const DATABASE_PATH: &str = "manifests/browsers.json";
+
+pub fn search(term: Option<String>) {
+    let database = match load_database(DATABASE_PATH) {
+        Ok(db) => db,
+        Err(err) => {
+            eprintln!("Error loading database: {err}");
+            return;
+        }
+    };
+
+    match term {
+        None => {
+            println!("All available packages ({} total)", database.packages.len());
+
+            for pkg in &database.packages {
+                println!("{} ({})", pkg.name, pkg.version);
+                println!("  {}\n", pkg.description);
+            }
+        }
+
+        Some(term) => {
+            let term_lower = term.to_lowercase();
+
+            let matches: Vec<&Package> = database
+                .packages
+                .iter()
+                .filter(|pkg| {
+                    pkg.name.to_lowercase().contains(&term_lower)
+                        || pkg.description.to_lowercase().contains(&term_lower)
+                })
+                .collect();
+
+            if matches.is_empty() {
+                println!("No packages found matching '{term}'.");
+                return;
+            }
+
+            println!("Found {} package(s) matching '{term}':\n", matches.len());
+            for pkg in matches {
+                println!("{} ({})", pkg.name, pkg.version);
+                println!("  {}/n", pkg.description);
+            }
+        }
+    }
 }
 
 pub fn info(name: String) {
