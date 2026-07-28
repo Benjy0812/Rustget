@@ -60,7 +60,21 @@ pub fn info() {
 
 /// Prints the SHA-256 hash of the file at `path`.
 pub fn sha256(path: PathBuf) {
-    println!("\nFile Path {}\n", path.display());
-    let sha256 = sha256_from_file(&path).unwrap(); // panics if file can't be read
-    println!("Sha256:{sha256}\n");
+    println!("\nFile Path: {}\n", path.display());
+
+    // Handle successful hashing or file errors.
+    match sha256_from_file(&path) {
+        Ok(hash) => println!("Sha256:{hash}\n"),
+        Err(err) => match err.kind() {
+            ErrorKind::NotFound => {
+                eprintln!("Error: File not found. Please provide a valid path.");
+            }
+            ErrorKind::PermissionDenied => {
+                eprintln!("Error: Permission denied. You don't have access to this file.");
+            }
+            _ => {
+                eprint!("Error: {err}");
+            }
+        },
+    }
 }
