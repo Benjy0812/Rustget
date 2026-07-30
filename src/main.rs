@@ -76,7 +76,10 @@ pub fn search(term: Option<String>) {
 
     match term {
         None => {
-            println!("All available packages ({} total)", database.packages.len());
+            println!(
+                "All available packages ({} total)\n",
+                database.packages.len()
+            );
 
             for pkg in &database.packages {
                 println!("{} ({})", pkg.name, pkg.version);
@@ -104,7 +107,7 @@ pub fn search(term: Option<String>) {
             println!("Found {} package(s) matching '{term}':\n", matches.len());
             for pkg in matches {
                 println!("{} ({})", pkg.name, pkg.version);
-                println!("  {}/n", pkg.description);
+                println!("  {}\n", pkg.description);
             }
         }
     }
