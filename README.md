@@ -34,10 +34,12 @@ Rustget uses JSON manifests to describe how packages should be installed.
 
 ```json
 {
-  "name": "firefox",
-  "version": "1.0.0",
-  "url": "https://example.com/firefox.zip",
-  "hash": "sha256-hash"
+  "name": "zen",
+  "version": "152.0.6",
+  "description": "Firefox-based browser with workspaces, split views, and vertical tabs",
+  "homepage": "https://zen-browser.app",
+  "download_url": "https://github.com/zen-browser/desktop/releases/download/1.21.8b/zen.installer.exe",
+  "sha256": "94c183802d1291c20f3d69f33425fac559b2572dfd191d32bfa704aba536776d"
 }
 ```
 
